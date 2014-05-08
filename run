@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# generate our keys if needed
-/usr/bin/ssh-keygen -A
-
-# start OpenSSH server
-echo "Starting SSHd..."
-/usr/bin/sshd -D

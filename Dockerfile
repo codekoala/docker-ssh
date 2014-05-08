@@ -1,7 +1,8 @@
-FROM codekoala/arch-s6
+FROM codekoala/arch
 MAINTAINER Josh VanderLinden <codekoala@gmail.com>
 
-RUN pacman -Sqyu --noconfirm --needed openssh
+RUN pacman -Sqyu --noconfirm --needed openssh && \
+    systemctl enable sshd
 
 # configure ssh
 RUN sed -i \
@@ -11,10 +12,5 @@ RUN sed -i \
         -e 's/^#*\(UsePAM\) .*/\1 no/' \
         /etc/ssh/sshd_config
 
-# setup the service
-RUN mkdir -p /services/ssh
-ADD run /services/ssh/run
-ADD finish /services/ssh/finish
-
 EXPOSE 22
-CMD ["/usr/bin/s6-svscan", "/services"]
+CMD ["/usr/bin/init"]

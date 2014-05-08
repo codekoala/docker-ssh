@@ -1,7 +1,7 @@
 docker-ssh
 ==========
 
-Docker build for OpenSSH on Arch. The daemon is managed by s6.
+Docker build for OpenSSH on Arch. The daemon is managed by systemd.
 
 Notes
 -----
