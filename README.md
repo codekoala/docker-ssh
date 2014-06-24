@@ -21,4 +21,4 @@ Launching This Container
 Currently, launching this container seems to need both the ``--privileged`` 
 flag, as well as ``/sys/fs/cgroup`` to be mounted within the container.
 
-    docker run --rm --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro codekoala/arch
+    docker run --rm --privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro codekoala/ssh
